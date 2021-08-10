@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
-export default function Image() {
-    return (
-        <div>
-            
-        </div>
-    )
+export default function Image({ url, openPopup }) {
+  return (
+    <div>
+      <img
+        className="gallery__image"
+        src={url}
+        alt=""
+        onClick={() => openPopup(url)}
+      />
+    </div>
+  );
 }

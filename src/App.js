@@ -1,12 +1,19 @@
-import './App.css';
-import Image from './Components/Image';
+import React from "react";
+import "./styles/main.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+import Home from "./pages/Home";
+import Page404 from "./pages/Page404";
+
+export default function App() {
   return (
-    <>
-      <Image/>
-    </>
+    <div className="app">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
-
-export default App;
